@@ -1,0 +1,27 @@
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: springuser
+    password: springpass
+  datasource:
+    url: jdbc:postgresql://localhost:5432/springdb
+    username: admin123
+    password: admin123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  logging:
+    level:
+      org.hibernate.SQL: debug
+      org.hibernate.type.descriptor.sql.BasicBinder: trace
+
+rabbitmq:
+  name: prototype_mq
+  exchange: prototype_exchange
+  key: private_route_key
